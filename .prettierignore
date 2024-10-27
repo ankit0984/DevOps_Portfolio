@@ -1,0 +1,44 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+
+# Ignore Next.js specific files and directories
+.next
+out
+
+# Ignore Node modules
+node_modules
+
+# Ignore package files
+package*.json
+yarn.lock
+
+# Ignore all markdown files
+*.md
+
+# Ignore public directory
+public
+
+# Ignore service worker
+sw.js
+workbox-*.js
+
+# Ignore TypeScript declaration files
+*.d.ts
+
+# Ignore configuration files
+next.config.js
+next-env.d.ts
+
+# Ignore environment files
+.env
+
+# Ignore IDE specific files
+.vscode
+.idea
+
+# Ignore any log files
+*.log
