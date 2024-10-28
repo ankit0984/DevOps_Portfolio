@@ -1,14 +1,14 @@
-FROM node:18-alpine AS deps
-COPY package*.json ./
-RUN npm install --production
+FROM node:20-alpine AS deps
+COPY package.json ./
+RUN npm install --omit=dev --legacy-peer-deps
 
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY . .
 COPY --from=deps /node_modules ./node_modules
 RUN npm run build
 
-FROM node:18-alpine AS prod
+FROM node:20-alpine AS prod
 WORKDIR /app
 COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
