@@ -217,22 +217,6 @@ export function generateEmailTemplate({ name, email, subject, message, date }) {
                 ${message.replace(/\n/g, '<br>')}
               </div>
             </div>
-
-            <div class="devops-section">
-              <div class="devops-title">DevOps Expertise Areas</div>
-              <div class="skills-grid">
-                <div class="skill-tag">Docker</div>
-                <div class="skill-tag">Kubernetes</div>
-                <div class="skill-tag">AWS</div>
-                <div class="skill-tag">CI/CD</div>
-                <div class="skill-tag">Terraform</div>
-                <div class="skill-tag">Jenkins</div>
-              </div>
-              <div style="text-align: center; margin-top: 20px;">
-                <a href="YOUR_PORTFOLIO_URL" class="cta-button">View Portfolio</a>
-              </div>
-            </div>
-
             <div class="timestamp">
               Message received on ${date}
             </div>
