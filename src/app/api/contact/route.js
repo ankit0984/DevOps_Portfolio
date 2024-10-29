@@ -5,10 +5,12 @@ import { generateEmailTemplate } from '@/lib/emailTemplate'
 
 // Create transporter outside request handler for reuse
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // use false for STARTTLS; true for SSL on port 465
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_APP_PASSWORD, // Use App Password for Gmail
+    user: process.env.GMAIL_ADDRESS,
+    pass: process.env.GMAIL_PASS,
   },
 })
 
@@ -27,7 +29,7 @@ export async function POST(req) {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL, // Your email where you want to receive messages
+      to: email, // Your email where you want to receive messages
       replyTo: email,
       subject: `[Portfolio Contact] ${subject}`,
       html: generateEmailTemplate({
