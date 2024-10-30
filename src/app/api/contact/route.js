@@ -5,8 +5,8 @@ import { generateEmailTemplate } from '@/lib/emailTemplate'
 
 // Create transporter outside request handler for reuse
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
   secure: false, // use false for STARTTLS; true for SSL on port 465
   auth: {
     user: process.env.GMAIL_ADDRESS,
