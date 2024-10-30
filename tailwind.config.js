@@ -90,13 +90,6 @@ module.exports = {
             transform: 'translate(-50%, -50%) scale(0.9)',
           },
         },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
-      },
-      keyframes: {
         orbit: {
           '0%': { transform: 'rotate(0deg) translateX(20px) rotate(0deg)' },
           '100%': {
@@ -104,6 +97,12 @@ module.exports = {
           },
         },
       },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
+      },
+
       backgroundImage: {
         hero: 'url(/assets/hero/hero-bg.png)',
         hero_shape1: 'url(/assets/hero/shape-1.svg)',
