@@ -63,8 +63,8 @@ export default function About() {
                       computing and system optimization.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                      {infoData.map((item, index) => (
-                        <div key={index} className="flex items-center gap-x-4">
+                      {infoData.map((item, id) => (
+                        <div key={id} className="flex items-center gap-x-4">
                           <div className="text-primary">{item.icon}</div>
                           <div className="text-sm md:text-base">
                             {item.text}
@@ -88,10 +88,10 @@ export default function About() {
                         </div>
                         <div className="flex flex-col gap-y-6">
                           {getData(qualificationData, 'Experience').data.map(
-                            (item, index) => {
+                            (item, id) => {
                               const { company, position, year } = item
                               return (
-                                <div key={index} className="flex gap-x-4 group">
+                                <div key={id} className="flex gap-x-4 group">
                                   <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                     <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                   </div>
@@ -122,10 +122,10 @@ export default function About() {
                         </div>
                         <div className="flex flex-col gap-y-6">
                           {getData(qualificationData, 'Education').data.map(
-                            (item, index) => {
+                            (item, id) => {
                               const { university, qualification, year } = item
                               return (
-                                <div key={index} className="flex gap-x-4 group">
+                                <div key={id} className="flex gap-x-4 group">
                                   <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                     <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                   </div>

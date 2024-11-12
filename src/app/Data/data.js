@@ -5,7 +5,6 @@ import {
   PhoneCall,
   GraduationCap,
   Calendar,
-  Briefcase,
 } from 'lucide-react'
 
 export const infoData = [

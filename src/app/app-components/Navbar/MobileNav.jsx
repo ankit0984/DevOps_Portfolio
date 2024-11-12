@@ -22,7 +22,7 @@ const links = [
   { name: 'Contact', href: '#contact' },
 ]
 
-export default function MobileNav({ theme, setTheme, handleDownloadCV }) {
+export default function MobileNav({ handleDownloadCV }) {
   const pathname = usePathname()
 
   return (
