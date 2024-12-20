@@ -99,102 +99,141 @@ export const skillData = [
 
 export const workData = [
   {
+    id: 'automated-deployment-pipeline',
     image: '/assets/work/1.png',
-    category: 'fullstack',
-    name: 'example 1',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
+    category: 'DevOps',
+    name: 'Automated Deployment Pipeline',
+    description: 'Built a robust CI/CD pipeline using Jenkins, Docker, and AWS for automated testing and deployment of microservices.',
+    longDescription: `A comprehensive CI/CD pipeline that automates the entire software delivery process. The pipeline includes automated testing, security scanning, and deployment to multiple environments.
+
+Key Features:
+• Multi-stage pipeline with dev, staging, and production environments
+• Automated testing with JUnit and Selenium
+• Container orchestration with Docker and Kubernetes
+• Infrastructure as Code using Terraform
+• Monitoring with Prometheus and Grafana`,
+    tech: ['Jenkins', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'Prometheus'],
+    github: 'https://github.com/yourusername/deployment-pipeline',
+    demo: 'https://pipeline-demo.yourdomain.com',
+    achievements: [
+      'Reduced deployment time by 70%',
+      'Improved system reliability by 45%',
+      'Implemented zero-downtime deployments'
+    ]
   },
   {
+    id: 'kubernetes-cluster-management',
     image: '/assets/work/2.png',
-    category: 'fullstack',
-    name: 'example 2',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
+    category: 'DevOps',
+    name: 'Kubernetes Cluster Management',
+    description: 'Designed and implemented a scalable Kubernetes cluster with automated scaling and monitoring capabilities.',
+    longDescription: `A production-grade Kubernetes cluster management solution that handles microservices deployment and scaling automatically.
+
+Key Features:
+• Auto-scaling based on CPU and memory metrics
+• Custom monitoring and alerting system
+• GitOps workflow with ArgoCD
+• Service mesh implementation with Istio
+• Centralized logging with ELK stack`,
+    tech: ['Kubernetes', 'Helm', 'ArgoCD', 'Istio', 'ELK Stack', 'Prometheus'],
+    github: 'https://github.com/yourusername/k8s-cluster',
+    demo: 'https://k8s-demo.yourdomain.com',
+    achievements: [
+      'Achieved 99.99% uptime',
+      'Reduced operational costs by 40%',
+      'Implemented blue-green deployments'
+    ]
   },
   {
+    id: 'infrastructure-as-code',
     image: '/assets/work/3.png',
-    category: 'fullstack',
-    name: 'example 3',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
+    category: 'DevOps',
+    name: 'Infrastructure as Code Platform',
+    description: 'Developed a comprehensive IaC solution using Terraform and AWS to manage cloud infrastructure programmatically.',
+    longDescription: `A scalable Infrastructure as Code platform that manages multi-region cloud deployments with version control and automated testing.
+
+Key Features:
+• Multi-environment infrastructure management
+• Automated security compliance checks
+• Cost optimization strategies
+• Disaster recovery automation
+• Infrastructure testing with Terratest`,
+    tech: ['Terraform', 'AWS', 'Python', 'Ansible', 'CloudFormation', 'Jenkins'],
+    github: 'https://github.com/yourusername/iac-platform',
+    demo: 'https://iac-demo.yourdomain.com',
+    achievements: [
+      'Reduced infrastructure provisioning time by 85%',
+      'Implemented infrastructure security best practices',
+      'Achieved 100% infrastructure documentation'
+    ]
   },
   {
+    id: 'monitoring-system',
     image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
+    category: 'DevOps',
+    name: 'Enterprise Monitoring System',
+    description: 'Created a comprehensive monitoring and alerting system using Prometheus, Grafana, and ELK stack.',
+    longDescription: `An enterprise-grade monitoring solution that provides real-time insights into system performance and business metrics.
+
+Key Features:
+• Real-time metrics visualization
+• Custom alerting rules
+• Log aggregation and analysis
+• APM integration
+• Custom dashboards for different stakeholders`,
+    tech: ['Prometheus', 'Grafana', 'ELK Stack', 'Node Exporter', 'AlertManager', 'Loki'],
+    github: 'https://github.com/yourusername/monitoring-system',
+    demo: 'https://monitoring-demo.yourdomain.com',
+    achievements: [
+      'Reduced incident response time by 60%',
+      'Implemented predictive alerting',
+      'Created custom monitoring solutions'
+    ]
   },
   {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
+    id: 'microservices-platform',
+    image: '/assets/work/5.png',
+    category: 'Development',
+    name: 'Microservices Platform',
+    description: 'Built a scalable microservices platform using Node.js, React, and MongoDB with comprehensive DevOps integration.',
+    longDescription: `A modern microservices platform that demonstrates best practices in both development and operations.
+
+Key Features:
+• Event-driven architecture
+• API Gateway implementation
+• Service discovery
+• Circuit breaker patterns
+• Distributed tracing`,
+    tech: ['Node.js', 'React', 'MongoDB', 'Docker', 'Kubernetes', 'Redis'],
+    github: 'https://github.com/yourusername/microservices-platform',
+    demo: 'https://microservices-demo.yourdomain.com',
+    achievements: [
+      'Handled 1M+ requests per day',
+      'Achieved 99.9% service availability',
+      'Implemented automated scaling'
+    ]
   },
   {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/4.png',
-    category: 'fullstack',
-    name: 'example 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo laborum nihil optio perferendis quo repudiandae voluptate. Culpa tempore ullam velit.',
-    link: '/',
-    github: '/',
-  },
+    id: 'security-automation',
+    image: '/assets/work/6.png',
+    category: 'DevOps',
+    name: 'Security Automation Framework',
+    description: 'Developed an automated security testing and compliance checking framework for cloud infrastructure.',
+    longDescription: `A comprehensive security automation framework that ensures infrastructure and application security through continuous testing and monitoring.
+
+Key Features:
+• Automated vulnerability scanning
+• Compliance checking
+• Secret management
+• Security policy enforcement
+• Incident response automation`,
+    tech: ['Python', 'AWS Security Hub', 'HashiCorp Vault', 'OWASP ZAP', 'SonarQube', 'Trivy'],
+    github: 'https://github.com/yourusername/security-automation',
+    demo: 'https://security-demo.yourdomain.com',
+    achievements: [
+      'Automated 90% of security checks',
+      'Reduced security incidents by 75%',
+      'Achieved compliance with multiple standards'
+    ]
+  }
 ]
