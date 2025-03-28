@@ -5,31 +5,81 @@ import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { infoData, qualificationData, skillData } from '@/app/Data/data'
 import { GraduationCap, Briefcase } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 export default function About() {
   const getData = (arr, title) => {
     return arr.find((item) => item.title === title)
   }
 
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
+
   return (
-    <section id="about" className="py-8 md:py-12 lg:py-24 min-h-screen">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 lg:mb-16 text-center">
+    <section 
+      id="about" 
+      className="py-8 md:py-12 lg:py-24 min-h-screen"
+      ref={sectionRef}
+    >
+      <motion.div 
+        className="container mx-auto px-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <motion.h2 
+          className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 lg:mb-16 text-center"
+          variants={itemVariants}
+        >
           About me
-        </h2>
+        </motion.h2>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          <div className="lg:flex-1 flex justify-center items-center">
-            <div className="relative w-[350px] h-[350px] lg:w-[550px] lg:h-[550px]">
+          <motion.div 
+            className="lg:flex-1 flex justify-center items-center"
+            variants={itemVariants}
+          >
+            <motion.div 
+              className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               <Image
                 src="/assets/about/myimg.png"
                 alt="Developer"
-                layout="fill"
-                objectFit="contain"
-                className="rounded-full"
+                fill
+                className="rounded-full object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
               />
-            </div>
-          </div>
-          <div className="flex-1">
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            className="flex-1"
+            variants={itemVariants}
+          >
             <Tabs defaultValue="personal" className="w-full">
               <TabsList className="w-full grid grid-cols-3 mb-8 md:mb-12 lg:max-w-[520px] mx-auto lg:mx-0">
                 <TabsTrigger className="text-sm md:text-base" value="personal">
@@ -48,7 +98,10 @@ export default function About() {
               <div className="mt-6 md:mt-8 lg:mt-12">
                 {/* Personal Info Tab */}
                 <TabsContent value="personal">
-                  <div>
+                  <motion.div
+                    className="text-center lg:text-left"
+                    variants={itemVariants}
+                  >
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4">
                       Dedicated DevOps Engineer
                     </h3>
@@ -64,22 +117,32 @@ export default function About() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       {infoData.map((item, id) => (
-                        <div key={id} className="flex items-center gap-x-4">
+                        <motion.div
+                          key={id}
+                          className="flex items-center gap-x-4"
+                          variants={itemVariants}
+                        >
                           <div className="text-primary">{item.icon}</div>
                           <div className="text-sm md:text-base">
                             {item.text}
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 </TabsContent>
                 {/* Qualifications Tab */}
                 <TabsContent value="qualifications">
-                  <div>
+                  <motion.div
+                    className="text-center lg:text-left"
+                    variants={itemVariants}
+                  >
                     <div className="grid md:grid-cols-2 gap-8">
                       {/* Experience */}
-                      <div className="flex flex-col gap-y-6">
+                      <motion.div
+                        className="flex flex-col gap-y-6"
+                        variants={itemVariants}
+                      >
                         <div className="flex gap-x-4 items-center text-lg md:text-xl text-primary">
                           <Briefcase />
                           <h4 className="capitalize font-medium">
@@ -91,7 +154,11 @@ export default function About() {
                             (item, id) => {
                               const { company, position, year } = item
                               return (
-                                <div key={id} className="flex gap-x-4 group">
+                                <motion.div
+                                  key={id}
+                                  className="flex gap-x-4 group"
+                                  variants={itemVariants}
+                                >
                                   <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                     <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                   </div>
@@ -106,14 +173,17 @@ export default function About() {
                                       {year}
                                     </div>
                                   </div>
-                                </div>
+                                </motion.div>
                               )
                             }
                           )}
                         </div>
-                      </div>
+                      </motion.div>
                       {/* Education */}
-                      <div className="flex flex-col gap-y-6">
+                      <motion.div
+                        className="flex flex-col gap-y-6"
+                        variants={itemVariants}
+                      >
                         <div className="flex gap-4 items-center text-lg md:text-xl text-primary">
                           <GraduationCap size={20} />
                           <h4 className="capitalize font-medium">
@@ -125,7 +195,11 @@ export default function About() {
                             (item, id) => {
                               const { university, qualification, year } = item
                               return (
-                                <div key={id} className="flex gap-x-4 group">
+                                <motion.div
+                                  key={id}
+                                  className="flex gap-x-4 group"
+                                  variants={itemVariants}
+                                >
                                   <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                     <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                   </div>
@@ -140,18 +214,21 @@ export default function About() {
                                       {year}
                                     </div>
                                   </div>
-                                </div>
+                                </motion.div>
                               )
                             }
                           )}
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 </TabsContent>
                 {/* Skills Tab */}
                 <TabsContent value="skills">
-                  <div className="text-center lg:text-left">
+                  <motion.div
+                    className="text-center lg:text-left"
+                    variants={itemVariants}
+                  >
                     <div className="mb-8">
                       <h4 className="text-lg md:text-xl font-semibold mb-2">
                         Skills
@@ -162,11 +239,13 @@ export default function About() {
                           (item, index) => {
                             const { name } = item
                             return (
-                              <div key={index}>
-                                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs md:text-sm">
-                                  {name}
-                                </span>
-                              </div>
+                              <motion.div
+                                key={index}
+                                className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs md:text-sm"
+                                variants={itemVariants}
+                              >
+                                {name}
+                              </motion.div>
                             )
                           }
                         )}
@@ -182,7 +261,11 @@ export default function About() {
                         {getData(skillData, 'Tools').data.map((item, index) => {
                           const { imgPath } = item
                           return (
-                            <div key={index}>
+                            <motion.div
+                              key={index}
+                              className="w-[40px] h-[40px]"
+                              variants={itemVariants}
+                            >
                               <Image
                                 src={imgPath}
                                 alt=""
@@ -190,18 +273,18 @@ export default function About() {
                                 height={40}
                                 priority
                               />
-                            </div>
+                            </motion.div>
                           )
                         })}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </TabsContent>
               </div>
             </Tabs>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
