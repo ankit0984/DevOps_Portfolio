@@ -119,7 +119,7 @@ export default function Navbar() {
   const handleDownloadCV = () => {
     const link = document.createElement('a')
     link.href =
-      'https://cdn.sanity.io/files/r4bu79zv/book-shop/728bd03e2cdab52768afd106ef6080dd26215c10.pdf'
+      'https://res.cloudinary.com/dpg78zw9q/image/upload/v1752339625/devOps_resume_final_template_trymh7.pdf'
     link.download = 'Ankit_Kumar_CV.pdf'
     document.body.appendChild(link)
     link.click()
